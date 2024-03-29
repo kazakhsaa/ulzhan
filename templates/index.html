@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        header {
+    background-color: #f8f9fa; /* Цвет фона */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+    }
+
+    .navbar-brand {
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #343a40; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    }
+
+    .navbar-nav {
+    margin-left: auto; /* Правый отступ для элементов меню */
+    }
+
+    .nav-item {
+    margin-right: 20px; /* Отступ между элементами меню */
+    }
+
+    .nav-link {
+    font-size: 18px; /* Размер шрифта */
+    color: #007bff; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    }
+
+    .nav-link:hover {
+    color: #0056b3; /* Цвет текста при наведении на ссылку */
+    }
+    .container {
+      position: relative;
+      width: 900px;
+      height: 600px;
+      margin: 50px auto;
+      border: 2px solid white;
+    }
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 900px 100%;
+    }
+    .background-img {
+      background-image: url('{{ original_image }}');
+    }
+    .foreground-img {
+      background-image: url('{{ compressed_image }}');
+      width: 50%;
+    }
+    
+    .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: ns-resize; /* Вертикальный курсор */
+    }
+
+    .slider-button {
+    pointer-events: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    left: calc(50% - 18px);
+    top: calc(50% - 18px);
+    }
+        /* Стили для кнопок */
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        /* Добавляем тени и закругления */
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-control, .form-control-file, .btn {
+            border-radius: 4px;
+        }
+
+        /* Улучшения для отзывчивости */
+        @media (max-width: 768px) {
+            .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .col-md-6 {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">AI Compress</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Главная</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="result.html">Сжатие</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="doc.html">Документация</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Настройки сжатия</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="quality">Качество:</label>
+                        <input type="range" class="form-control-range" id="quality" name="quality" min="1" max="100" value="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="scale">Масштаб:</label>
+                        <input type="range" class="form-control-range" id="scale" name="scale" min="0.1" max="1" step="0.1" value="0.5">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Загрузить изображение</h2>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" class="form-control-file" name="image" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Сжать изображение</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

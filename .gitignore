@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+
+# Docker
+.docker/
+
+# IDE (например, VSCode)
+.vscode/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Other
+*.swp
+.DS_Store

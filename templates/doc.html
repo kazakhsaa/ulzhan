@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        header {
+    background-color: #f8f9fa; /* Цвет фона */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+    }
+
+    .navbar-brand {
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #343a40; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    }
+
+    .navbar-nav {
+    margin-left: auto; /* Правый отступ для элементов меню */
+    }
+
+    .nav-item {
+    margin-right: 20px; /* Отступ между элементами меню */
+    }
+
+    .nav-link {
+    font-size: 18px; /* Размер шрифта */
+    color: #007bff; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    }
+
+    .nav-link:hover {
+    color: #0056b3; /* Цвет текста при наведении на ссылку */
+    }
+    </style>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">AI Compress</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Главная</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="result.html">Сжатие</a>
+                    </li> -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Документация</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Документация</h1>
+        <h2>Автоэнкодеры (автокодировщики)</h2>
+        <p>Автоэнкодер - это тип нейронной сети, которая учится сжимать данные в меньшее представление, а затем восстанавливать исходные данные из этого сжатого представления. Он состоит из двух основных частей: кодера (который сжимает данные) и декодера (который восстанавливает данные). При сжатии изображений автокодировщики учатся определять наиболее важные особенности и характеристики изображения, чтобы точно восстановить оригинал после сжатия.</p>
+        
+        <h2>Конволюционные нейронные сети (CNN)</h2>
+        <p>Конволюционные нейронные сети, или CNN, - это мощный инструмент для анализа визуальных данных, особенно изображений. В контексте сжатия изображений CNN можно использовать для выявления и использования повторяющихся паттернов и структур в данных. CNN эффективно "сканируют" изображение в поисках этих паттернов и используют обнаруженные особенности для сжатия изображения. Это все равно что смотреть на фотографию и замечать повторяющиеся узоры и детали, которые можно упростить без существенной потери качества.</p> <p>
+        
+        <h2>Генеративные адверсарные сети (GAN)</h2>
+        <p>GAN состоит из двух сетей: генератора, который создает изображения, и дискриминатора, который оценивает, насколько хорошо они соответствуют реальным изображениям. В контексте сжатия изображений GAN можно использовать для создания высококачественных версий сжатых изображений. The generator learns to create images that are as close as possible to the originals, while the discriminator tries to distinguish them from real ones. It's like training an artist (generator) to create accurate copies of paintings until the critic (discriminator) can't tell the copies from the originals.</p>
+        
+        <h2>Различия</h2>
+        <ul>
+            <li><strong>Принцип работы:</strong> Автокодировщики работают за счет прямого сжатия и реконструкции данных, CNN сосредоточены на изучении особенностей и структур в данных для сжатия, а GAN используют две сети для создания почти идентичных копий оригинальных изображений.</li>
+            <li><strong>Качество и применение:</strong> Автокодировщики подходят для задач, где важна точная реконструкция исходных данных. CNN эффективны в ситуациях, когда необходимо учитывать контекст и детали изображения. GAN, благодаря своей способности генерировать реалистичные изображения, полезны для таких задач, как улучшение и создание изображений.</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+main {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.original img,
+.compressed img {
+    max-width: 300px;
+    height: auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* CSS для header */
+header {
+    background-color: #f8f9fa; /* Цвет фона */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+  }
+  
+  .navbar-brand {
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #343a40; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+  }
+  
+  .navbar-nav {
+    margin-left: auto; /* Правый отступ для элементов меню */
+  }
+  
+  .nav-item {
+    margin-right: 20px; /* Отступ между элементами меню */
+  }
+  
+  .nav-link {
+    font-size: 18px; /* Размер шрифта */
+    color: #007bff; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+  }
+  
+  .nav-link:hover {
+    color: #0056b3; /* Цвет текста при наведении на ссылку */
+  }
+  
